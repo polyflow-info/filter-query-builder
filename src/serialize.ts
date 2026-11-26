@@ -2,7 +2,7 @@ import type { FilterBuildIssue, FilterBuildResult, IssueCode, PayloadFilterValue
 
 type IssueFactory = (code: IssueCode, message: string) => FilterBuildIssue;
 
-// Insertion order follows the Kotlin parser's operator precedence.
+// Insertion order follows the backend parser's operator precedence.
 const tokens = {
   eq: "=",
   like: "%",
@@ -109,7 +109,7 @@ function serializeRange(
 function isParserCompatible(attributeName: string, token: string, value: string): boolean {
   const serializedFilterEntry = `${attributeName}${token}${value}`;
 
-  // The Kotlin parser checks operators in precedence order (=, %, >, <, []), not by position.
+  // The backend parser checks operators in precedence order (=, %, >, <, []), not by position.
   // For a like filter with value "Sales=Europe", "task.name%Sales=Europe" would select =
   // instead of the intended %, so reject it when chosenToken differs from token.
   const tokenByPrecedence = Object.values(tokens).find((token) => serializedFilterEntry.includes(token));

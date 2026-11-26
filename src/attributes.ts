@@ -1,4 +1,4 @@
-/** Internal field catalogue used by the public configuration types. */
+/** Built-in Task filter attributes mapped to their value types. */
 export type TaskAttributes = {
   "task.id": "text";
   "task.taskDefinitionKey": "text";
@@ -17,6 +17,7 @@ export type TaskAttributes = {
   "task.textSearch": "text";
 };
 
+/** Built-in Data Entry filter attributes mapped to their value types. */
 export type DataAttributes = {
   "data.entryType": "text";
   "data.entryId": "text";
