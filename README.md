@@ -1,6 +1,8 @@
 # Polyflow filter query builder
 
-Type-safe builders for [Polyflow's View API filter DSL](https://www.holunda.io/camunda-bpm-taskpool/3.11.0/reference-guide/components/view-api.html).
+[![CI Pipeline Status](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml)
+
+Type-safe builders for [Polyflow's View API filter DSL](https://www.holunda.io/camunda-bpm-taskpool/stable/reference-guide/components/view-api.html).
 
 The library produces filter strings. Whether an attribute, operator, or value is supported by a particular View API implementation is the backend's responsibility.
 
@@ -109,33 +111,6 @@ The builder reports only serialization problems:
 
 An issue contains the original input array index, field, code, and message. Failures contain no partial filter array. Otherwise, strings and numbers pass through without domain validation, including non-finite numbers. Null and undefined values are not part of the typed input contract.
 
-## Development
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for development setup instructions.
 
-Use Node 26 LTS.
-
-```sh
-npm ci
-npm run typecheck
-npm run test:types
-npm run build
-npm test
-npm pack --dry-run
-```
-
-Runtime tests import the build output, so run the build before running them.
-
-See [RELEASING.md](./RELEASING.md) for publishing setup and the release process.
-
-## Releasing
-
-1. Update the package and lockfile versions together:
-
-   ```sh
-   npm version <version> --no-git-tag-version
-   ```
-
-2. Commit and merge to `main`; wait for CI to pass.
-3. Publish a GitHub Release at that commit with tag `v<version>`. Mark it as a prerelease if the version has a prerelease suffix.
-4. Wait for the Publish workflow to succeed. It checks version alignment, builds, runs tests, packs, and publishes to npm. Stable releases use `latest`; prereleases use `next`.
-
-Publishing a GitHub Release triggers publication; pushing a commit or tag alone does not.
+See [RELEASING.md](./RELEASING.md) for the release process.
