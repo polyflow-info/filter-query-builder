@@ -1,6 +1,6 @@
 {
   "name": "@polyflow-info/filter-query-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typed builders for Polyflow View API filter queries",
   "license": "Apache-2.0",
   "repository": {
