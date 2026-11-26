@@ -1,6 +1,6 @@
 # Polyflow filter query builder
 
-[![CI Pipeline Status](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/@polyflow-info/filter-query-builder)](https://www.npmjs.com/package/@polyflow-info/filter-query-builder) [![CI Pipeline Status](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/polyflow-info/filter-query-builder/actions/workflows/ci.yml)
 
 Type-safe builders for [Polyflow's View API filter DSL](https://www.holunda.io/camunda-bpm-taskpool/stable/reference-guide/components/view-api.html).
 
